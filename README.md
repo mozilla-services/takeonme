@@ -23,7 +23,7 @@ global namespace).
 1. Run a tool to detect whether any of the resources can be hijacked
    (e.g. [subjack](https://github.com/haccer/subjack) for subdomains)
 
-1. Reserve or take down the hijackable resources
+1. Reserve or take down the hijackable resources (they should be gone in a day or two)
 
 
 ## Non-goals
