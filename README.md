@@ -1,5 +1,7 @@
 # takeonme
 
+[![PyPI version](https://badge.fury.io/py/takeonme.svg)](https://badge.fury.io/py/takeonme)
+
 `takeonme` enumerates resources that could be hijacked or taken over
 (e.g. subdomains, hosted zones, IP, or other resources in a common
 global namespace).
