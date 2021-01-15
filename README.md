@@ -43,7 +43,7 @@ different default credentials.
 Requirements:
 
 * git
-* Python 3.8 or newer
+* [Python 3.8 or newer](https://www.python.org/downloads/)
 * [poetry](https://python-poetry.org/)
 
 1. `git clone` the repository then run `poetry install`
