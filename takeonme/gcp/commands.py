@@ -12,9 +12,9 @@ def cli(ctx: click.Context) -> None:
     pass
 
 
-@cli.command("dns")
+@cli.command("domains")
 @click.pass_context
-def dns(ctx: click.Context) -> None:
+def domains(ctx: click.Context) -> None:
     """Fetch and write GCP DNS records to the output file
 
     Buffers records in memory then pretty prints them to the output
