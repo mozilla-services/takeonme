@@ -30,6 +30,11 @@ def fetch_records_for_hosted_zone(
 
 
 def get_all_records() -> List[Dict[str, Any]]:
+    """
+    Return Route53 DNS resource record sets
+
+    https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html
+    """
     client = get_client()
     return [
         record
