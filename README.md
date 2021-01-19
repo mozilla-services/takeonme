@@ -51,6 +51,9 @@ Requirements:
 1. run `poetry install`
 
 
+To add a new service or resource, follow [this template](https://github.com/mozilla-services/takeonme/issues/new?template=custom.md).
+
+
 ## Implemented resources
 
 * [AWS Route53 DNS records](https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecord.html)
