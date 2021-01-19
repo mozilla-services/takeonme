@@ -15,7 +15,7 @@ def cli(ctx: click.Context) -> None:
     pass
 
 
-@cli.command("dns")
+@cli.command("domains")
 @click.pass_context
 def dns(ctx: click.Context) -> None:
     """Fetch and write AWS DNS records to the output file
