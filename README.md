@@ -76,4 +76,4 @@ Requirements:
 ## Implemented resources
 
 * [AWS Route53 DNS records](https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecord.html)
-* [GCP DNS]()
+* [GCP Cloud DNS records](https://cloud.google.com/dns/docs/reference/v1/resourceRecordSets#resource)
