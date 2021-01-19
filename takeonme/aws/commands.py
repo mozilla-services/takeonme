@@ -2,6 +2,7 @@ from json import dump as dump_json
 
 import click
 
+from takeonme.dns_util import records_to_sorted_unique_domains
 import takeonme.aws.route53 as r53
 
 
@@ -30,10 +31,7 @@ def domains(ctx: click.Context, json: bool) -> None:
     if json:
         dump_json(records, output, sort_keys=True, indent=4)
     else:
-        record_names = [
-            record.get("Name", None)
-            for record in records
-            if record and record.get("Name", None)
-        ]
-        for unique_domain in sorted(set(record_names)):
+        for unique_domain in records_to_sorted_unique_domains(
+            records, name_field="Name"
+        ):
             output.write(f"{unique_domain}\n")
