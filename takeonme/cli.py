@@ -5,7 +5,7 @@ import takeonme.gcp.commands
 
 
 @click.group()
-@click.option("-o", "--output", type=click.File("wb"), default="-")
+@click.option("-o", "--output", type=click.File("w"), default="-")
 @click.pass_context
 def cli(ctx: click.Context, output: click.File) -> None:
     ctx.ensure_object(dict)
