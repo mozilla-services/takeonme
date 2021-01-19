@@ -17,8 +17,8 @@ global namespace).
    [AWS](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials))
 
 1. Run `takeonme <service name> <resource name>` to print API output a
-   given resource from service name (e.g. `takeonme aws dns` for
-   Route53 DNS records) as JSON
+   given resource from service name (e.g. `takeonme aws domains` for
+   Route53 DNS records)
 
 1. Run a tool to detect whether any of the resources can be hijacked
    (e.g. [subjack](https://github.com/haccer/subjack) for subdomains)
