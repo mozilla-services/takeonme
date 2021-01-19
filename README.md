@@ -46,31 +46,9 @@ Requirements:
 * [Python 3.8 or newer](https://www.python.org/downloads/)
 * [poetry](https://python-poetry.org/)
 
-1. `git clone` the repository then run `poetry install`
+1. `git clone` the repository
 
-### Adding a new service or resource
-
-Requirements:
-
-* the resource can be hijacked i.e. it's on
-  https://github.com/EdOverflow/can-i-take-over-xyz or similar
-
-* the service provides an API to enumerate the resource (ideally a
-  python client library too)
-
-1. Run `cp -r example_service takeonme/` to recursively copy the
-   example resource into the package namespace.
-
-1. Run `mv takeonme/{example_service,service_name}`
-
-1. Replace `example_*` with the service or resource name in
-   `takeonme/service_name/commands.py`
-
-1. Find a client library for the service and run `poetry add` to add
-   the client libary to `takeonme` requirements
-
-1. Add `cli.add_command(takeonme.<service_name>.commands.cli)` to
-   `takeonme/cli.py`
+1. run `poetry install`
 
 
 ## Implemented resources
