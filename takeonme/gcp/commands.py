@@ -1,4 +1,4 @@
-import json
+from json import dump as dump_json
 
 import click
 
@@ -12,18 +12,30 @@ def cli(ctx: click.Context) -> None:
     pass
 
 
-@cli.command("dns")
+@cli.command("domains")
+@click.option("--json", default=False, is_flag=True)
 @click.pass_context
-def dns(ctx: click.Context) -> None:
-    """Fetch and write GCP DNS records to the output file
+def domains(ctx: click.Context, json: bool) -> None:
+    """Fetch, buffer, and write GCP DNS records to the output file
 
-    Buffers records in memory then pretty prints them to the output
-    file as JSON with sorted keys
+    Sort, de-dupe, and print one unique domain name per line
+    or when --json is provided pretty print JSON with sorted keys
 
     """
-    json.dump(
-        cloud_dns.get_all_records(),
-        ctx.obj["output"],
-        sort_keys=True,
-        indent=4,
-    )
+    output = ctx.obj["output"]
+    records = cloud_dns.get_all_records()
+    if json:
+        dump_json(
+            records,
+            output,
+            sort_keys=True,
+            indent=4,
+        )
+    else:
+        record_names = [
+            record.get("name", None)
+            for record in records
+            if record and record.get("name", None)
+        ]
+        for unique_domain in sorted(set(record_names)):
+            output.write(f"{unique_domain}\n")
