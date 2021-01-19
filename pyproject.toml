@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "takeonme"
-version = "0.2.1"
+version = "0.2.2"
 description = "Enumerate resources vulnerable to takeover"
 authors = ["SecOps <secops+takeonme@mozilla.com>"]
 license = "MPL-2"
