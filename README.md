@@ -12,9 +12,9 @@ global namespace).
 1. Run `pip install takeonme` to install the `takeonme` command from
    PyPI
 
-1. Configure credentials for the service you want to enumerate
-   (e.g. for
-   [AWS](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials))
+1. [Configure
+   credentials](https://github.com/mozilla-services/takeonme/#implemented-resources)
+   for the service you want to enumerate
 
 1. Run `takeonme list <service name> <resource name>` to list
    resources from a service (e.g. `takeonme list aws domains`)
@@ -53,4 +53,7 @@ To add a new service or resource, follow [this template](https://github.com/mozi
 ## Implemented resources
 
 * [AWS Route53 DNS records](https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecord.html)
+  * [configuring credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials)
+
 * [GCP Cloud DNS records](https://cloud.google.com/dns/docs/reference/v1/resourceRecordSets#resource)
+  * [configuring credentials](https://cloud.google.com/docs/authentication/production)
