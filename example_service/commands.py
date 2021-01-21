@@ -1,4 +1,7 @@
-from json import dump as dump_json
+from json import (
+    dump as dump_json,
+    load as load_json,
+)
 
 import click
 
@@ -20,8 +23,13 @@ def example_resource(ctx: click.Context, json: bool) -> None:
     file as JSON with sorted keys
 
     """
+    input = ctx.obj["input"]
     output = ctx.obj["output"]
-    records = example_service_client.get_all_of_example_resource()
+    records = (
+        load_json(input)
+        if input is not None
+        else example_service_client.get_all_of_example_resource()
+    )
     if json:
         dump_json(records, output, sort_keys=True, indent=4)
     else:

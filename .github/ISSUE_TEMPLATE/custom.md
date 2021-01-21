@@ -50,5 +50,10 @@ Add a list subcommand to `takeonme/service_name/commands.py` that:
       `ctx.obj["output"]`). Prefer a format other tools can consume
       directly.
 
-- [ ] implments the flag `--json` and writes complete API output in
-      JSON format
+- [ ] implements the flag `--json` and writes complete API output in
+      JSON format (i.e. `takeonme list service_name resource --json`)
+
+- [ ] reads JSON output from stdin and write the plaintext output to
+      stdout (i.e. `takeonme list --input=- service_name resource
+      <(takeonme list service_name resource --json)` without making
+      API calls

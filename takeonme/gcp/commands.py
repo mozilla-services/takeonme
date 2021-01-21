@@ -1,4 +1,7 @@
-from json import dump as dump_json
+from json import (
+    dump as dump_json,
+    load as load_json,
+)
 
 import click
 
@@ -23,8 +26,9 @@ def domains(ctx: click.Context, json: bool) -> None:
     or when --json is provided pretty print JSON with sorted keys
 
     """
+    input = ctx.obj["input"]
     output = ctx.obj["output"]
-    records = cloud_dns.get_all_records()
+    records = load_json(input) if input is not None else cloud_dns.get_all_records()
     if json:
         dump_json(
             records,
