@@ -27,7 +27,7 @@ Recommended Steps:
 
 1. Run `poetry add` to add the client libary to `takeonme` dependencies
 
-1. Add `cli.add_command(takeonme.service_name.commands.cli)` to
+1. Add `list_.add_command(takeonme.service_name.commands.list_)` to
    `takeonme/cli.py`
 
 ## Adding a new resource
@@ -41,7 +41,7 @@ Requirements:
 - [ ] an API exists to enumerate the resource
 
 
-Add a subcommand to `takeonme/service_name/commands.py` that:
+Add a list subcommand to `takeonme/service_name/commands.py` that:
 
 - [ ] includes a link to the API endpoint in the docstring or the
       docstring of a client method it uses to fetch the resource

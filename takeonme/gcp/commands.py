@@ -8,12 +8,12 @@ import takeonme.gcp.cloud_dns as cloud_dns
 
 @click.group("gcp")
 @click.pass_context
-def cli(ctx: click.Context) -> None:
+def list_(ctx: click.Context) -> None:
     """Enumerate GCP resources that can be hijacked"""
     pass
 
 
-@cli.command("domains")
+@list_.command("domains")
 @click.option("--json", default=False, is_flag=True)
 @click.pass_context
 def domains(ctx: click.Context, json: bool) -> None:

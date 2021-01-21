@@ -16,9 +16,8 @@ global namespace).
    (e.g. for
    [AWS](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials))
 
-1. Run `takeonme <service name> <resource name>` to print API output a
-   given resource from service name (e.g. `takeonme aws domains` for
-   Route53 DNS records)
+1. Run `takeonme list <service name> <resource name>` to list
+   resources from a service (e.g. `takeonme list aws domains`)
 
 1. Run a tool to detect whether any of the resources can be hijacked
    (e.g. [subjack](https://github.com/haccer/subjack) for subdomains)
@@ -27,9 +26,6 @@ global namespace).
 
 
 ## Non-goals
-
-`takeonme` does **not** take on evaluating whether enumerated
-resources can be hijacked instead use a red team tool.
 
 `takeonme` does **not** run against multiple services or accounts or
 use multiple credentials instead invoke it multiple times with
