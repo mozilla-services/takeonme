@@ -12,13 +12,12 @@ global namespace).
 1. Run `pip install takeonme` to install the `takeonme` command from
    PyPI
 
-1. Configure credentials for the service you want to enumerate
-   (e.g. for
-   [AWS](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials))
+1. [Configure
+   credentials](https://github.com/mozilla-services/takeonme/#implemented-resources)
+   for the service you want to enumerate
 
-1. Run `takeonme <service name> <resource name>` to print API output a
-   given resource from service name (e.g. `takeonme aws domains` for
-   Route53 DNS records)
+1. Run `takeonme list <service name> <resource name>` to list
+   resources from a service (e.g. `takeonme list aws domains`)
 
 1. Run a tool to detect whether any of the resources can be hijacked
    (e.g. [subjack](https://github.com/haccer/subjack) for subdomains)
@@ -27,9 +26,6 @@ global namespace).
 
 
 ## Non-goals
-
-`takeonme` does **not** take on evaluating whether enumerated
-resources can be hijacked instead use a red team tool.
 
 `takeonme` does **not** run against multiple services or accounts or
 use multiple credentials instead invoke it multiple times with
@@ -57,4 +53,7 @@ To add a new service or resource, follow [this template](https://github.com/mozi
 ## Implemented resources
 
 * [AWS Route53 DNS records](https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecord.html)
+  * [configuring credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials)
+
 * [GCP Cloud DNS records](https://cloud.google.com/dns/docs/reference/v1/resourceRecordSets#resource)
+  * [configuring credentials](https://cloud.google.com/docs/authentication/production)

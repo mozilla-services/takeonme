@@ -4,7 +4,7 @@ import google.auth
 import googleapiclient.discovery
 
 
-def get_default_credentials() -> int:
+def get_default_credentials() -> Any:
     credentials, _ = google.auth.default()
     return credentials
 

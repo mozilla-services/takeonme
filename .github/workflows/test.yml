@@ -37,7 +37,14 @@ jobs:
         run: |
           ~/.local/bin/poetry install
 
-      - name: Check formatted and run tests
+      - name: Run tests
+        run: |
+          ~/.local/bin/poetry run pytest -v
+
+      - name: Check formatted
         run: |
           ~/.local/bin/poetry run black --check takeonme example_service
-          ~/.local/bin/poetry run pytest -v
+
+      - name: Check types
+        run: |
+          ~/.local/bin/poetry run mypy --ignore-missing-imports --strict takeonme
