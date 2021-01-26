@@ -5,7 +5,7 @@ from json import (
 
 import click
 
-from takeonme.dns_util import records_to_sorted_unique_domains
+from takeonme.util import sorted_unique_by_key
 import takeonme.gcp.cloud_dns as cloud_dns
 
 
@@ -37,7 +37,5 @@ def domains(ctx: click.Context, json: bool) -> None:
             indent=4,
         )
     else:
-        for unique_domain in records_to_sorted_unique_domains(
-            records, name_field="name"
-        ):
+        for unique_domain in sorted_unique_by_key(records, "name"):
             output.write(f"{unique_domain}\n")
