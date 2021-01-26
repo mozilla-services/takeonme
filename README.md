@@ -53,6 +53,7 @@ To add a new service or resource, follow [this template](https://github.com/mozi
 ## Implemented resources
 
 * [AWS Route53 DNS records](https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecord.html)
+* [AWS EC2 Elastic IPs](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html)
   * [configuring credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials)
 
 * [GCP Cloud DNS records](https://cloud.google.com/dns/docs/reference/v1/resourceRecordSets#resource)
